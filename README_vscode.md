@@ -5,6 +5,15 @@ git clone https://github.com/canh25xp/face-attendance-system -b video --depth 1
 cd face-attendance-system
 git submodule update --init
 ```
+
+## Create venv and install requirements
+TODO : Add instruction for creating venv
+```bash
+pip install -r Silent-Face-Anti-Spoofing/requirements.txt
+pip install cmake
+pip install -r requirements.txt
+```
+
 ## 2. Add Silent-Face-Anti-Spoofing to PYTHONPATH in launch.json
 ```bash
 touch .vscode/launch.json
