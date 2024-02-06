@@ -1,0 +1,5 @@
+[submodule "Silent-Face-Anti-Spoofing-Win"]
+	path = Silent-Face-Anti-Spoofing-Win
+	url = https://github.com/canh25xp/Silent-Face-Anti-Spoofing-Win
+	ignore = all
+	shallow = true
