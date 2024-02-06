@@ -2,3 +2,4 @@
 	path = Silent-Face-Anti-Spoofing
 	url = https://github.com/canh25xp/Silent-Face-Anti-Spoofing
 	ignore = all
+	shallow = true
