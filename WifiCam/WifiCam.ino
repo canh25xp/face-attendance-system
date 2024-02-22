@@ -1,7 +1,7 @@
 #include "WifiCam.hpp"
 
-static const char* SSID = "Michael";
-static const char* PASS = "HelloWorld";
+static const char* SSID = "Lenovo";
+static const char* PASS = "12345678";
 
 WebServer server(80);
 

@@ -14,6 +14,13 @@ pip install cmake
 pip install -r requirements.txt
 ```
 
+## Install dlib
+```bash
+git clone https://github.com/z-mahmud22/Dlib_Windows_Python3.x
+cd Dlib_Windows_Python3.x
+python -m pip install dlib-19.22.99-cp310-cp310-win_amd64.whl
+```
+
 ## 2. Add Silent-Face-Anti-Spoofing to PYTHONPATH in launch.json
 ```bash
 touch .vscode/launch.json
