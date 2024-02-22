@@ -12,7 +12,7 @@ from test import test
 from urllib.request import urlopen
 import numpy as np
 
-URL = 'http://192.168.137.151/800x600.jpg'
+URL = 'http://192.168.137.222/800x600.jpg'
 
 class App:
     def __init__(self):
