@@ -36,7 +36,7 @@ class App:
 
         self.db_dir = './db'
         if not os.path.exists(self.db_dir):
-            os.mkdir(self.db_dir)
+            os.mkdir(self.db_dir) 
 
         self.log_path = './log.txt'
 
@@ -150,6 +150,8 @@ class App:
 
     def add_img_to_label(self, label):
         imgtk = ImageTk.PhotoImage(image=self.most_recent_capture_pil)
+        img_log = cv2.cvtColor(self.most_recent_capture_arr, cv2.COLOR_BGR2RGB)
+        cv2.imwrite("log/test.jpg", img_log)
         label.imgtk = imgtk
         label.configure(image=imgtk)
 
