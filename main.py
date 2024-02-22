@@ -9,7 +9,10 @@ import face_recognition
 
 import util
 from test import test
+from urllib.request import urlopen
+import numpy as np
 
+URL = 'http://192.168.137.151/800x600.jpg'
 
 class App:
     def __init__(self):
@@ -29,7 +32,7 @@ class App:
         self.webcam_label = util.get_img_label(self.main_window)
         self.webcam_label.place(x=10, y=0, width=700, height=500)
 
-        self.add_webcam(self.webcam_label)
+        self.add_camera_server(self.webcam_label)
 
         self.db_dir = './db'
         if not os.path.exists(self.db_dir):
@@ -55,6 +58,24 @@ class App:
         self._label.configure(image=imgtk)
 
         self._label.after(20, self.process_webcam)
+
+    def add_camera_server(self, label):
+        self.url = URL
+        self._label = label
+        self.process_camera()
+
+    def process_camera_server(self):
+        img_resp = urlopen(self.url)
+        imgnp = np.array(bytearray(img_resp.read()), dtype=np.uint8)
+        img = cv2.imdecode(imgnp, cv2.IMREAD_COLOR)
+        self.most_recent_capture_arr = img
+        img_ = cv2.cvtColor(self.most_recent_capture_arr, cv2.COLOR_BGR2RGB)
+        self.most_recent_capture_pil = Image.fromarray(img_)
+        imgtk = ImageTk.PhotoImage(image=self.most_recent_capture_pil)
+        self._label.imgtk = imgtk
+        self._label.configure(image=imgtk)
+        self._label.after(20, self.process_camera_server)
+
 
     def login(self):
 
