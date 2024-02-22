@@ -62,7 +62,7 @@ class App:
     def add_camera_server(self, label):
         self.url = URL
         self._label = label
-        self.process_camera()
+        self.process_camera_server()
 
     def process_camera_server(self):
         img_resp = urlopen(self.url)
